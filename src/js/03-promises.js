@@ -38,6 +38,13 @@ function startCreate(e) {
   amount =  Number(amount.value);
   let counter = delay;
   
+  if (delay < 0) {
+    Notify.failure(`The delay cannot be less than zero`);
+    return;
+  } else if(amount < 1) {  
+    Notify.failure(`The Amount field must be greater than zero`);
+    return;
+  };
   
   for (let index = 1; index < amount+1; index++) {
   createPromise(index, counter)
