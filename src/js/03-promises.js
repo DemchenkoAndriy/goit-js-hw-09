@@ -39,7 +39,7 @@ function startCreate(e) {
   let counter = delay;
   
   if (delay < 0) {
-    Notify.failure(`The delay cannot be less than zero`);
+    Notify.failure(`The first delay cannot be less than zero`);
     return;
   } else if(amount < 1) {  
     Notify.failure(`The Amount field must be greater than zero`);
