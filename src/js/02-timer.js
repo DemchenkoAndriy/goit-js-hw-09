@@ -62,11 +62,15 @@ function updateTimer() {
     timerId = setInterval(() => {
        
     let dateChanged = convertMs(SelectedDate - new Date());
-         
+      
          days.textContent = addLeadingZero(dateChanged.days);
          hours.textContent = addLeadingZero(dateChanged.hours);
          minutes.textContent = addLeadingZero(dateChanged.minutes);
-         seconds.textContent = addLeadingZero(dateChanged.seconds);
+      seconds.textContent = addLeadingZero(dateChanged.seconds);
+      
+       if (dateChanged.days <= 0 && dateChanged.hours <= 0 && dateChanged.minutes<= 0 && dateChanged.seconds <= 0) {
+      clearInterval(timerId);
+    }
   }, 1000);
     
 

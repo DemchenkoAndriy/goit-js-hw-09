@@ -56,6 +56,6 @@ function startCreate(e) {
   });
     counter += step;
   }
-  
+   e.currentTarget.reset();
 
 }
